@@ -1,0 +1,17 @@
+C:\Users\lukeb\repos\ConfigManager\bin\Debug\net10.0-windows\ConfigManager.exe
+C:\Users\lukeb\repos\ConfigManager\bin\Debug\net10.0-windows\ConfigManager.deps.json
+C:\Users\lukeb\repos\ConfigManager\bin\Debug\net10.0-windows\ConfigManager.runtimeconfig.json
+C:\Users\lukeb\repos\ConfigManager\bin\Debug\net10.0-windows\ConfigManager.dll
+C:\Users\lukeb\repos\ConfigManager\bin\Debug\net10.0-windows\ConfigManager.pdb
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.Form1.resources
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.csproj.GenerateResource.cache
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.AssemblyInfoInputs.cache
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.AssemblyInfo.cs
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.csproj.CoreCompileInputs.cache
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.dll
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\refint\ConfigManager.dll
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.pdb
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.genruntimeconfig.cache
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ref\ConfigManager.dll
+C:\Users\lukeb\repos\ConfigManager\obj\Debug\net10.0-windows\ConfigManager.Properties.Resources.resources
