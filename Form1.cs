@@ -189,9 +189,17 @@ namespace ConfigManager
 
             CopyDirectory(cfgFilePath, gameCfgFilePath);
             
-            foreach (string dir in Directory.GetDirectories(gameUserDataFilePath))
+            if (checkBox1.Checked)
             {
-                CopyDirectory(s30FilePath, Path.Combine(dir, "730"));
+                foreach (string dir in Directory.GetDirectories(gameUserDataFilePath))
+                {
+                    CopyDirectory(s30FilePath, Path.Combine(dir, "730"));
+                }
+            } else
+            {
+                string userId = comboBox1.SelectedItem != null ? comboBox1.SelectedItem.ToString() : comboBox1.Text != null ? comboBox1.Text : "null";
+                string userDataPath = Path.Combine(gameUserDataFilePath, userId, "730");
+                CopyDirectory(s30FilePath, userDataPath);
             }
 
             MessageBox.Show("Done! You can now launch the game.");

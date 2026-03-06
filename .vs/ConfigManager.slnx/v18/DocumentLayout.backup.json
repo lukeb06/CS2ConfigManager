@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\lukeb\\repos\\ConfigManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{94A532F7-39C3-46F8-BC0A-A592D7DCE242}|ConfigManager.csproj|c:\\users\\lukeb\\repos\\configmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{94A532F7-39C3-46F8-BC0A-A592D7DCE242}|ConfigManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{19847EC6-1B26-AB40-1DD4-966C3049CE50}|ConfigManager.csproj|c:\\users\\lukeb\\repos\\configmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19847EC6-1B26-AB40-1DD4-966C3049CE50}|ConfigManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94A532F7-39C3-46F8-BC0A-A592D7DCE242}|ConfigManager.csproj|c:\\users\\lukeb\\repos\\configmanager\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94A532F7-39C3-46F8-BC0A-A592D7DCE242}|ConfigManager.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19847EC6-1B26-AB40-1DD4-966C3049CE50}|ConfigManager.csproj|c:\\users\\lukeb\\repos\\configmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{19847EC6-1B26-AB40-1DD4-966C3049CE50}|ConfigManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94A532F7-39C3-46F8-BC0A-A592D7DCE242}|ConfigManager.csproj|c:\\users\\lukeb\\repos\\configmanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94A532F7-39C3-46F8-BC0A-A592D7DCE242}|ConfigManager.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19847EC6-1B26-AB40-1DD4-966C3049CE50}|ConfigManager.csproj|c:\\users\\lukeb\\repos\\configmanager\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19847EC6-1B26-AB40-1DD4-966C3049CE50}|ConfigManager.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94A532F7-39C3-46F8-BC0A-A592D7DCE242}|ConfigManager.csproj|c:\\users\\lukeb\\repos\\configmanager\\configmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{94A532F7-39C3-46F8-BC0A-A592D7DCE242}|ConfigManager.csproj|solutionrelative:configmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{19847EC6-1B26-AB40-1DD4-966C3049CE50}|ConfigManager.csproj|c:\\users\\lukeb\\repos\\configmanager\\configmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{19847EC6-1B26-AB40-1DD4-966C3049CE50}|ConfigManager.csproj|solutionrelative:configmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.cs*",
-              "RelativeToolTip": "Form1.cs*",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCMAAAAiAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAuwK4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-06T00:43:21.462Z",
               "IsPinned": true,
@@ -44,25 +44,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.cs [Design]*",
-              "RelativeToolTip": "Form1.cs [Design]*",
+              "ToolTip": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T04:00:05.019Z",
+              "WhenOpened": "2026-03-06T05:23:03.264Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.Designer.cs*",
-              "RelativeToolTip": "Form1.Designer.cs*",
-              "ViewState": "AgIAAB4AAAAAAAAAAAA5wCgAAAAPAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\lukeb\\repos\\ConfigManager\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-06T01:06:43.342Z",
               "EditorCaption": ""
@@ -70,15 +70,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ConfigManager",
+              "Title": "ConfigManager.csproj",
               "DocumentMoniker": "C:\\Users\\lukeb\\repos\\ConfigManager\\ConfigManager.csproj",
               "RelativeDocumentMoniker": "ConfigManager.csproj",
               "ToolTip": "C:\\Users\\lukeb\\repos\\ConfigManager\\ConfigManager.csproj",
               "RelativeToolTip": "ConfigManager.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-03-06T00:40:56.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T00:40:56.008Z"
             }
           ]
         }

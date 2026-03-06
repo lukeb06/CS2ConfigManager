@@ -35,17 +35,19 @@
             button2 = new Button();
             comboBox1 = new ComboBox();
             label2 = new Label();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(12, 180);
+            label1.Location = new Point(12, 189);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 32);
+            label1.Size = new Size(222, 32);
             label1.TabIndex = 0;
+            label1.Text = "Last Backup: NEVER";
             label1.Click += label1_Click;
             // 
             // button1
@@ -91,6 +93,19 @@
             label2.TabIndex = 4;
             label2.Text = "\"Trust me I never lose. Either I win or learn from it\" -Tupac";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Location = new Point(12, 58);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Padding = new Padding(15, 0, 0, 0);
+            checkBox1.Size = new Size(249, 36);
+            checkBox1.TabIndex = 5;
+            checkBox1.Text = "Restore to all users";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -99,6 +114,7 @@
             BackgroundImage = Properties.Resources.Tupac_Shakur_bw_portrait_klsa_kl_a_billboard_1548_573203277;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(658, 272);
+            Controls.Add(checkBox1);
             Controls.Add(label2);
             Controls.Add(comboBox1);
             Controls.Add(button2);
@@ -121,5 +137,6 @@
         private Button button2;
         private ComboBox comboBox1;
         private Label label2;
+        private CheckBox checkBox1;
     }
 }
