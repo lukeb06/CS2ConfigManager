@@ -42,22 +42,21 @@
             // 
             label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(12, 189);
+            label1.Location = new Point(12, 255);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
             label1.Size = new Size(222, 32);
             label1.TabIndex = 0;
             label1.Text = "Last Backup: NEVER";
-            label1.Click += label1_Click;
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             button1.BackColor = Color.White;
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(432, 71);
+            button1.Location = new Point(418, 12);
             button1.Name = "button1";
-            button1.Size = new Size(214, 53);
+            button1.Size = new Size(250, 53);
             button1.TabIndex = 2;
             button1.Text = "Backup Config";
             button1.UseVisualStyleBackColor = true;
@@ -66,9 +65,9 @@
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Location = new Point(432, 12);
+            button2.Location = new Point(418, 71);
             button2.Name = "button2";
-            button2.Size = new Size(214, 53);
+            button2.Size = new Size(250, 53);
             button2.TabIndex = 1;
             button2.Text = "Restore Config";
             button2.UseVisualStyleBackColor = false;
@@ -87,7 +86,7 @@
             // 
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Location = new Point(12, 231);
+            label2.Location = new Point(12, 297);
             label2.Name = "label2";
             label2.Size = new Size(633, 32);
             label2.TabIndex = 4;
@@ -95,10 +94,11 @@
             // 
             // checkBox1
             // 
+            checkBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             checkBox1.AutoSize = true;
             checkBox1.Checked = true;
             checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Location = new Point(12, 58);
+            checkBox1.Location = new Point(418, 130);
             checkBox1.Name = "checkBox1";
             checkBox1.Padding = new Padding(15, 0, 0, 0);
             checkBox1.Size = new Size(249, 36);
@@ -113,7 +113,7 @@
             BackColor = Color.Black;
             BackgroundImage = Properties.Resources.Tupac_Shakur_bw_portrait_klsa_kl_a_billboard_1548_573203277;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(658, 272);
+            ClientSize = new Size(680, 338);
             Controls.Add(checkBox1);
             Controls.Add(label2);
             Controls.Add(comboBox1);

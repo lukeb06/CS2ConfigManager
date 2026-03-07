@@ -4,46 +4,94 @@ namespace ConfigManager
 {
     public partial class Form1 : Form
     {
+        private string getAppDataPath()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CS2ConfigManager");
+        }
+
+        private string getTsFilePath()
+        {
+            return Path.Combine(getAppDataPath(), "last_backup.txt");
+        }
+
+        private string getUserFilePath()
+        {
+            return Path.Combine(getAppDataPath(), "last_user.txt");
+        }
+
+        private string getSteamPath()
+        {
+            return @"C:\Program Files (x86)\Steam";
+        }
+        private string getGamePath()
+        {
+            return Path.Combine(getSteamPath(), "steamapps", "common", "Counter-Strike Global Offensive");
+        }
+
+        private string getGameUserDataFilePath()
+        {
+            return Path.Combine(getSteamPath(), "userdata");
+        }
+
+        private string getGameCfgFilePath()
+        {
+            return Path.Combine(getGamePath(), "game", "csgo", "cfg");
+        }
+
+        private string getCfgFilePath()
+        {
+            return Path.Combine(getAppDataPath(), "cfg");
+        }
+        
+        private string getS30FilePath()
+        {
+            return Path.Combine(getAppDataPath(), "730");
+        }
+
+        private string getSelectedUserId()
+        {
+            return comboBox1.SelectedItem.ToString();
+        }
+
+        private string getUserId()
+        {
+            return comboBox1.SelectedItem != null ? getSelectedUserId() : comboBox1.Text != null ? comboBox1.Text : "null";
+        }
+
+        private string getUserDataPath(string userId)
+        {
+            return Path.Combine(getGameUserDataFilePath(), userId, "730");
+        }
+
         public Form1()
         {
+            string appDataPath = getAppDataPath();
+            string tsFilePath = getTsFilePath();
+            string userFilePath = getUserFilePath();
+
+            string steamPath = getSteamPath();
+            string gamePath = getGamePath();
+
+            string gameUserDataFilePath = getGameUserDataFilePath();
+
+            string gameCfgFilePath = getGameCfgFilePath();
+
+            string cfgFilePath = getCfgFilePath();
+            string s30FilePath = getS30FilePath();
+
+
+            Directory.CreateDirectory(appDataPath);
+            Directory.CreateDirectory(cfgFilePath);
+            Directory.CreateDirectory(s30FilePath);
+
             InitializeComponent();
-            InitLabel1();
-            InitButton2();
-            InitComboBox1();
+            InitLabel1(tsFilePath);
+            InitButton2(tsFilePath);
+            InitComboBox1(userFilePath, gameUserDataFilePath);
         }
 
-        private void InitLabel1()
+        private void ReloadButton2(string tsFilePath)
         {
-            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CS2ConfigManager");
-
-            if (Directory.Exists(appDataPath) == false)
-            {
-                Directory.CreateDirectory(appDataPath);
-            }
-
-            string tsFilePath = Path.Combine(appDataPath, "last_backup.txt");
-            if (File.Exists(tsFilePath))
-            {
-                string lastBackupTime = File.ReadAllText(tsFilePath);
-                label1.Text = $"Last Backup: {lastBackupTime}";
-            }
-            else
-            {
-                label1.Text = "Last Backup: NEVER";
-            }
-        }
-
-        private void InitButton2()
-        {
-            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CS2ConfigManager");
-
-            if (Directory.Exists(appDataPath) == false)
-            {
-                Directory.CreateDirectory(appDataPath);
-            }
-
-            string tsFilePath = Path.Combine(appDataPath, "last_backup.txt");
-
             if (File.Exists(tsFilePath))
             {
                 button2.BackColor = Color.White;
@@ -58,27 +106,23 @@ namespace ConfigManager
             }
         }
 
-        private void InitComboBox1()
+        private void InitLabel1(string tsFilePath)
         {
-            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CS2ConfigManager");
+            if (File.Exists(tsFilePath)) label1.Text = $"Last Backup: {File.ReadAllText(tsFilePath)}";
+        }
 
-            if (Directory.Exists(appDataPath) == false)
-            {
-                Directory.CreateDirectory(appDataPath);
-            }
+        private void InitButton2(string tsFilePath)
+        {
+            ReloadButton2(tsFilePath);
+        }
 
-            string userFilePath = Path.Combine(appDataPath, "last_user.txt");
-
+        private void InitComboBox1(string userFilePath, string gameUserDataFilePath)
+        {
             if (File.Exists(userFilePath))
             {
                 string lastUser = File.ReadAllText(userFilePath);
                 comboBox1.Text = lastUser;
             }
-
-            string steamPath = @"C:\Program Files (x86)\Steam";
-            string gamePath = Path.Combine(steamPath, "steamapps", "common", "Counter-Strike Global Offensive");
-
-            string gameUserDataFilePath = Path.Combine(steamPath, "userdata");
 
             string[] options = Directory.GetDirectories(gameUserDataFilePath);
 
@@ -89,9 +133,17 @@ namespace ConfigManager
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void CopyFile(string file, string newPath)
         {
+            if (!Directory.Exists(newPath)) return;
 
+            string fileName = Path.GetFileName(file);
+            string newFilePath = Path.Combine(newPath, fileName);
+            if (File.Exists(newFilePath))
+            {
+                File.Delete(newFilePath);
+            }
+            File.Copy(file, newFilePath);
         }
 
         private void CopyDirectory(string path, string newPath)
@@ -100,13 +152,7 @@ namespace ConfigManager
 
             foreach (string file in Directory.GetFiles(path))
             {
-                string fileName = Path.GetFileName(file);
-                string newFilePath = Path.Combine(newPath, fileName);
-                if (File.Exists(newFilePath))
-                {
-                    File.Delete(newFilePath);
-                }
-                File.Copy(file, newFilePath);
+                CopyFile(file, newPath);
 
                 foreach (string dir in Directory.GetDirectories(path))
                 {
@@ -119,107 +165,70 @@ namespace ConfigManager
             }
         }
 
-        // Backup Button
-        private void button1_Click(object sender, EventArgs e)
+        private void Backup()
         {
-            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CS2ConfigManager");
-            string steamPath = @"C:\Program Files (x86)\Steam";
-            string gamePath = Path.Combine(steamPath, "steamapps", "common", "Counter-Strike Global Offensive");
+            string date = DateTime.Now.ToShortDateString();
 
-            string gameCfgFilePath = Path.Combine(gamePath, "game", "csgo", "cfg");
-            string gameUserDataFilePath = Path.Combine(steamPath, "userdata");
+            File.WriteAllText(getTsFilePath(), date);
 
-            if (Directory.Exists(appDataPath) == false)
-            {
-                Directory.CreateDirectory(appDataPath);
-            }
-
-            string tsFilePath = Path.Combine(appDataPath, "last_backup.txt");
-            string cfgFilePath = Path.Combine(appDataPath, "cfg");
-            string s30FilePath = Path.Combine(appDataPath, "730");
-
-            Directory.CreateDirectory(cfgFilePath);
-            Directory.CreateDirectory(s30FilePath);
-
-            File.WriteAllText(tsFilePath, DateTime.Now.ToShortDateString());
-
-            label1.Text = $"Last Backup: {DateTime.Now.ToShortDateString()}";
+            label1.Text = $"Last Backup: {date}";
 
             button2.BackColor = Color.White;
             button2.ForeColor = Color.Black;
             button2.Enabled = true;
 
-
-
             // Move Files
-            CopyDirectory(gameCfgFilePath, cfgFilePath);
+            CopyDirectory(getGameCfgFilePath(), getCfgFilePath());
 
-            string userId = comboBox1.SelectedItem != null ? comboBox1.SelectedItem.ToString() : comboBox1.Text != null ? comboBox1.Text : "null";
-            string userDataPath = Path.Combine(gameUserDataFilePath, userId, "730");
-            
+            string userId = getUserId();
+            string userDataPath = getUserDataPath(userId);
+
             if (!Directory.Exists(userDataPath))
             {
                 MessageBox.Show("User ID not found. Please select a valid user from the dropdown.");
                 return;
             }
 
-            CopyDirectory(userDataPath, s30FilePath);
+            CopyDirectory(userDataPath, getS30FilePath());
+        }
 
+        private void Restore()
+        {
+            CopyDirectory(getCfgFilePath(), getGameCfgFilePath());
+
+            if (checkBox1.Checked)
+            {
+                foreach (string dir in Directory.GetDirectories(getGameUserDataFilePath()))
+                {
+                    CopyDirectory(getS30FilePath(), Path.Combine(dir, "730"));
+                }
+            }
+            else
+            {
+                string userId = getUserId();
+                string userDataPath = getUserDataPath(userId);
+                CopyDirectory(getS30FilePath(), userDataPath);
+            }
+        }
+
+        // Backup Button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Backup();
             MessageBox.Show("Done!");
         }
 
         // Restore Button
         private void button2_Click(object sender, EventArgs e)
         {
-            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CS2ConfigManager");
-            string steamPath = @"C:\Program Files (x86)\Steam";
-            string gamePath = Path.Combine(steamPath, "steamapps", "common", "Counter-Strike Global Offensive");
-
-            if (Directory.Exists(appDataPath) == false)
-            {
-                Directory.CreateDirectory(appDataPath);
-            }
-
-            string tsFilePath = Path.Combine(appDataPath, "last_backup.txt");
-            string cfgFilePath = Path.Combine(appDataPath, "cfg");
-            string s30FilePath = Path.Combine(appDataPath, "730");
-
-            string gameCfgFilePath = Path.Combine(gamePath, "game", "csgo", "cfg");
-            string gameUserDataFilePath = Path.Combine(steamPath, "userdata");
-
-            CopyDirectory(cfgFilePath, gameCfgFilePath);
-            
-            if (checkBox1.Checked)
-            {
-                foreach (string dir in Directory.GetDirectories(gameUserDataFilePath))
-                {
-                    CopyDirectory(s30FilePath, Path.Combine(dir, "730"));
-                }
-            } else
-            {
-                string userId = comboBox1.SelectedItem != null ? comboBox1.SelectedItem.ToString() : comboBox1.Text != null ? comboBox1.Text : "null";
-                string userDataPath = Path.Combine(gameUserDataFilePath, userId, "730");
-                CopyDirectory(s30FilePath, userDataPath);
-            }
-
+            Restore();
             MessageBox.Show("Done! You can now launch the game.");
         }
 
+        // User ID Selector
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CS2ConfigManager");
-            string userFilePath = Path.Combine(appDataPath, "last_user.txt");
-
-            if (Directory.Exists(appDataPath) == false)
-            {
-                Directory.CreateDirectory(appDataPath);
-            }
-
-            File.WriteAllText(userFilePath, comboBox1.SelectedItem.ToString());
-
-            // string item = comboBox1.SelectedItem.ToString();
-
-            // label1.Text = item;
+            File.WriteAllText(getUserFilePath(), getSelectedUserId());
         }
     }
 }
